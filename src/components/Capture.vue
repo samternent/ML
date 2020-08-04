@@ -63,15 +63,15 @@ export default {
       const poseNet = ml5.poseNet(this.$refs.video, {
         architecture: 'ResNet50',
         imageScaleFactor: 0.3,
-        outputStride: 16,
+        outputStride: 32,
         flipHorizontal: false,
         minConfidence: 0.5,
-        maxPoseDetections: 1,
+        maxPoseDetections: 5,
         scoreThreshold: 0.5,
         nmsRadius: 20,
         detectionType: 'multiple',
-        inputResolution: 513,
-        multiplier: 0.75,
+        // inputResolution: 513,
+        multiplier: 1,
         quantBytes: 2,
       }, () => {});
       // this.objectDetector = ml5.objectDetector('cocossd', {}, this.detect);
