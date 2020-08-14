@@ -60,7 +60,7 @@ export default {
     //     vm.$refs.video.srcObject = stream;
     // });
       const vm = this;
-      const poseNet = ml5.poseNet(this.$refs.video));
+      const poseNet = ml5.poseNet(this.$refs.video);
       // this.objectDetector = ml5.objectDetector('cocossd', {}, this.detect);
       poseNet.on('pose', (results) => {
         vm.poses = results;
