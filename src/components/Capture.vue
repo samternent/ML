@@ -60,20 +60,7 @@ export default {
     //     vm.$refs.video.srcObject = stream;
     // });
       const vm = this;
-      const poseNet = ml5.poseNet(this.$refs.video, {
-        architecture: 'ResNet50',
-        imageScaleFactor: 0.3,
-        outputStride: 32,
-        flipHorizontal: false,
-        minConfidence: 0.5,
-        maxPoseDetections: 5,
-        scoreThreshold: 0.5,
-        nmsRadius: 20,
-        detectionType: 'multiple',
-        // inputResolution: 513,
-        multiplier: 1,
-        quantBytes: 2,
-      }, () => {});
+      const poseNet = ml5.poseNet(this.$refs.video));
       // this.objectDetector = ml5.objectDetector('cocossd', {}, this.detect);
       poseNet.on('pose', (results) => {
         vm.poses = results;
